@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+
+    nginx:
+        image: nginx:alpine
+        ports:
+            - 8080:80
+        links:
+            - queueapp
+        volumes:
+            - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+
+    queueapp:
+        build: .
+        # links:
+            # - redis
+        environment:
+            - NODE_ENV=production
+            # - NODE_ENV=develop
+        volumes:
+            - .:/src
+            - /src/node_modules
+
+    # redis:
+    #     image: redis:latest
+    #     command: redis-server --appendonly yes
+    #     volumes:
+    #         - ../data/redis:/data/redis

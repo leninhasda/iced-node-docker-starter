@@ -1,0 +1,15 @@
+{
+    "apps": [{
+        "name": "queue-server",
+        "script": "./index.iced",
+        "interpreter": "./node_modules/.bin/iced",
+        "watch": true,
+        "ignore_watch": [
+            "node_modules",
+            "*.log",
+            "*.lock",
+            ".gitignore",
+            ".git"
+        ],
+    }]
+}
