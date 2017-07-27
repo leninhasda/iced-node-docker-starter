@@ -1,2 +1,3 @@
 # iced-node-docker-starter
-starter node application pack  
+
+Docker ready IcedCoffeeScript flavored node starter pack
